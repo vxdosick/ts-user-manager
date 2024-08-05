@@ -1,7 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AddUser = void 0;
+exports.AddUser = exports.getUser = void 0;
 const users_1 = require("../data/users");
+const getUser = () => {
+    return users_1.users;
+};
+exports.getUser = getUser;
 const AddUser = (id, name, email, role, address, coordinates, addToUsers, phoneNumber) => {
     const newUser = {
         id: id,
