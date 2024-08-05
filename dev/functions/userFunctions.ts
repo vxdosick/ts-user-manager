@@ -3,10 +3,11 @@ import { IAddress } from "../types/Address"
 import { InterfacePhone } from "../types/Phone"
 import { IUser } from "../types/User"
 import { users } from "../data/users"
-
+// user get functions
 export const getUser = (): IUser[] => {
     return users
 }
+// user add functions
 export const AddUser = (
     id: number, 
     name: string, 

@@ -1,6 +1,6 @@
 import { IUser } from "../types/User";
 import { Role } from "../enums/UserRole";
-
+// user array
 export const users: IUser[] = [
     {
         id: 1,

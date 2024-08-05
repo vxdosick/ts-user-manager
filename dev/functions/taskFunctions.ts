@@ -2,9 +2,11 @@ import { tasks } from "../data/tasks"
 import { ITask } from "../types/Task"
 import { TaskStatus } from "../enums/TaskStatus"
 
+// Function for outputting all tasks 
 export const getTasks = (): ITask[] => {
     return tasks;
 }
+// Creating a task
 export const CreateTask = (
     id: number,
     title: string,
@@ -23,7 +25,11 @@ export const CreateTask = (
     addToTasks ? tasks.push(newTask) : null
     return addToTasks ? tasks : newTask
 }
-export const ChangeUserInTask = (taskId: number, newUser: string): ITask | string => {
+// Changing user in task
+export const ChangeUserInTask = (
+    taskId: number, 
+    newUser: string
+): ITask | string => {
     const changedTask: ITask | undefined = tasks.find(task => task.id == taskId)
     if (changedTask && changedTask.status != (TaskStatus.CANCELLED || TaskStatus.DONE)) {
         changedTask.completeUser = newUser;
@@ -32,7 +38,11 @@ export const ChangeUserInTask = (taskId: number, newUser: string): ITask | strin
         return "Task not found or already completed or cancelled";
     }
 }
-export const ChangeTaskStatus = (taskId: number, newStatus: TaskStatus): ITask | string => {
+// Changing task status
+export const ChangeTaskStatus = (
+    taskId: number, 
+    newStatus: TaskStatus
+): ITask | string => {
     const changedStatusTask: ITask | undefined = tasks.find(task => task.id == taskId)
     if (changedStatusTask) {
         changedStatusTask.status = newStatus
@@ -41,7 +51,10 @@ export const ChangeTaskStatus = (taskId: number, newStatus: TaskStatus): ITask |
         return "Task not found"
     }
 }
-export const getTaskGruppedByStatus = (statusInfo: TaskStatus): ITask[] | string => {
+// Getting a group of tasks with a certain status
+export const getTaskGruppedByStatus = (
+    statusInfo: TaskStatus
+): ITask[] | string => {
     const tasksGroupedByStatus: ITask[] | undefined = tasks.filter(task => task.status == statusInfo)
     if (tasksGroupedByStatus) {
         return tasksGroupedByStatus

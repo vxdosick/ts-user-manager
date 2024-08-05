@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.users = void 0;
 const UserRole_1 = require("../enums/UserRole");
+// user array
 exports.users = [
     {
         id: 1,

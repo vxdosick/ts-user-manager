@@ -3,10 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getTaskGruppedByStatus = exports.ChangeTaskStatus = exports.ChangeUserInTask = exports.CreateTask = exports.getTasks = void 0;
 const tasks_1 = require("../data/tasks");
 const TaskStatus_1 = require("../enums/TaskStatus");
+// Function for outputting all tasks 
 const getTasks = () => {
     return tasks_1.tasks;
 };
 exports.getTasks = getTasks;
+// Creating a task
 const CreateTask = (id, title, description, status, completeUser, addToTasks) => {
     const newTask = {
         id: id,
@@ -19,6 +21,7 @@ const CreateTask = (id, title, description, status, completeUser, addToTasks) =>
     return addToTasks ? tasks_1.tasks : newTask;
 };
 exports.CreateTask = CreateTask;
+// Changing user in task
 const ChangeUserInTask = (taskId, newUser) => {
     const changedTask = tasks_1.tasks.find(task => task.id == taskId);
     if (changedTask && changedTask.status != (TaskStatus_1.TaskStatus.CANCELLED || TaskStatus_1.TaskStatus.DONE)) {
@@ -30,6 +33,7 @@ const ChangeUserInTask = (taskId, newUser) => {
     }
 };
 exports.ChangeUserInTask = ChangeUserInTask;
+// Changing task status
 const ChangeTaskStatus = (taskId, newStatus) => {
     const changedStatusTask = tasks_1.tasks.find(task => task.id == taskId);
     if (changedStatusTask) {
@@ -41,6 +45,7 @@ const ChangeTaskStatus = (taskId, newStatus) => {
     }
 };
 exports.ChangeTaskStatus = ChangeTaskStatus;
+// Getting a group of tasks with a certain status
 const getTaskGruppedByStatus = (statusInfo) => {
     const tasksGroupedByStatus = tasks_1.tasks.filter(task => task.status == statusInfo);
     if (tasksGroupedByStatus) {

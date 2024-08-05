@@ -1,1 +1,2 @@
+// Presumably the number must start with "+" and have 9 digits (the number can be changed depending on the country).
 export type InterfacePhone = `+${number}${number}${number}${number}${number}${number}${number}${number}${number}` | "Not specified"

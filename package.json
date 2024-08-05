@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {},
   "keywords": [],
-  "author": "",
+  "author": "vxdosick",
   "license": "ISC",
-  "description": "",
+  "description": "Functional application for managing users and their tasks. Developed in typescript",
   "devDependencies": {
     "typescript": "^5.5.4"
   }
