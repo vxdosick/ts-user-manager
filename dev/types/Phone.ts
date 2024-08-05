@@ -1,0 +1,1 @@
+export type InterfacePhone = `+${number}${number}${number}${number}${number}${number}${number}${number}${number}` | "Not specified"
